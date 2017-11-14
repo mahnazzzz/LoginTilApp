@@ -1,10 +1,11 @@
 import React from 'react';
-import { Text, View, Platform, TouchableOpacity, StyleSheet, Button, WebView } from 'react-native';
+import { Text, View, Platform, TouchableOpacity, StyleSheet, Button, WebView ,Image } from 'react-native';
 import { Constants, WebBrowser } from "expo";
 import { StackNavigator } from 'react-navigation';
 import login from"./login.js";
 import register from"./register.js";
 import  { Component } from 'react';
+
 
 
 const Touchable = (props) => (
@@ -15,10 +16,15 @@ const Touchable = (props) => (
 class HomeScreen extends React.Component {
   static navigationOptions = { title: 'CPH BUSSINESS' };
   render() {
+    const resizeMode = 'center';
+    
     const { navigate } = this.props.navigation;
     return (
+
       <View >
-      <Text style={{ textAlign: "center", fontSize: 20 }}>CPH BUSSINESS COPENHAGEN</Text>
+      <Text style={{ textAlign: "center", fontSize: 20 , color: 'yellow',
+      fontWeight: 'bold', backgroundColor: 'gray' }}>CPH BUSSINESS COPENHAGEN</Text>
+      <Image style={{ width: 360, height: 200}} source={require('./imag/logo2.png')} />
        
       <Touchable onPress={() => navigate('login')} title="LOG IND" />
       <Touchable onPress={() => navigate('register')} title="Register" />
